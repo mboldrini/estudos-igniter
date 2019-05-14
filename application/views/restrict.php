@@ -163,3 +163,133 @@
 		</div>
 	</div>
 </div>
+
+<div id="modal_member" class="modal fade">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">x</button>
+				<div class="modal-title">Membros</div>
+			</div>
+
+			<div class="modal-body">
+				<form action="" id="form_member">
+
+					<input name="member_id" hidden>
+
+					<div class="form-group">
+						<div class="col-lg-2 control-label">Nome</div>
+						<div class="col-lg-10">
+							<input type="text" id="member_name" name="member_name" class="form-control" maxlength="100">
+							<div class="help-block"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-lg-2 control-label">Foto</div>
+						<div class="col-lg-10">
+							<input type="file" accept="image/*" id="member_photo" name="member_photo" class="form-control">
+							<div class="help-block"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-lg-2 control-label">Descrição</div>
+						<div class="col-lg-10">
+							<text-area id="member_description" name="member_description" class="form-control" maxlength="254">
+							</text-area>
+							<div class="help-block"></div>
+						</div>
+					</div>
+
+					<div class="form-group text-center">
+						<button type="submit" id="btn_save_member" class="btn btn-primary">
+							<i class="fa fa-save">&nbsp;&nbsp;Salvar</i>
+						</button>
+						<span class="help-block"></span>
+					</div>
+
+				</form>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+<div id="modal_user" class="modal fade">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">x</button>
+				<div class="modal-title">Usuário</div>
+			</div>
+
+			<div class="modal-body">
+				<form action="" id="form_user">
+
+					<input name=user_id" hidden>
+
+					<div class="form-group">
+						<div class="col-lg-2 control-label">Login</div>
+						<div class="col-lg-10">
+							<input type="text" id="user_login" name="user_login" class="form-control" maxlength="30">
+							<div class="help-block"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-lg-2 control-label">Nome</div>
+						<div class="col-lg-10">
+							<input type="text" id="user_full_name" name="user_full_name" class="form-control" maxlength="100">
+							<div class="help-block"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-lg-2 control-label">E-mail</div>
+						<div class="col-lg-10">
+							<input type="email" id="user_email" name="user_email" class="form-control" maxlength="100">
+							<div class="help-block"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-lg-2 control-label">Confirmar E-mail</div>
+						<div class="col-lg-10">
+							<input type="email" id="user_email_confirm" name="user_email_confirm" class="form-control" maxlength="100">
+							<div class="help-block"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-lg-2 control-label">Senha</div>
+						<div class="col-lg-10">
+							<input type="password" id="user_password" name="user_password" class="form-control">
+							<div class="help-block"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-lg-2 control-label">Confirmar Senha</div>
+						<div class="col-lg-10">
+							<input type="password" id="user_password_confirm" name="user_password_confirm" class="form-control">
+							<div class="help-block"></div>
+						</div>
+					</div>
+
+					<div class="form-group text-center">
+						<button type="submit" id="btn_save_user" class="btn btn-primary">
+							<i class="fa fa-save">&nbsp;&nbsp;Salvar</i>
+						</button>
+						<span class="help-block"></span>
+					</div>
+
+				</form>
+			</div>
+
+		</div>
+	</div>
+</div>
