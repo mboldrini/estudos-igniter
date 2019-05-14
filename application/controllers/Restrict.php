@@ -6,7 +6,9 @@ class Restrict extends CI_Controller {
 
         $this->load->model("users_model");
 
-        $this->template->show("login.php");
+        print_r($this->users_model->get_user_data("admin") );
+
+        // $this->template->show("login.php");
     }
     
 }

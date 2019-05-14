@@ -10,9 +10,9 @@ class Users_model extends CI_Model{
 
     public function get_user_data($user_login){
         $this->db
-        ->select("user_id, password_has, user_full_name, user_email")
+        ->select("user_id, password_hash, user_full_name, user_email")
         ->from("users")
-        ->where("user_login", $user_login)
+        ->where("user_login", $user_login);
 
         $result = $this->db->get();
 
