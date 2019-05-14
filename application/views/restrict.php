@@ -33,9 +33,68 @@
 		</ul>
 		
 		<div class="tab-content">
-			<div id="tab_courses" class="tab-pane active">Conteúdo Contato</div>
-			<div id="tab_team" class="tab-pane">Conteúdo Equipe</div>
-			<div id="tab_user" class="tab-pane">Conteúdo Usuários</div>
+
+			<div id="tab_courses" class="tab-pane active">
+				<div class="container-fluid">
+					<h2 class="text-center"><strong>Gerenciar Cursos</strong></h2>
+					<a id="btn_add_course" class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp;Adicionar Curso</a>
+					<table id="dt_courses" class="table table-striped table-bordered">
+						<thead>
+							<tr class="tableheader">
+								<th>Nome</th>
+								<th>Imagem</th>
+								<th>Duração</th>
+								<th>Descrição</th>
+								<th>Ações</th>
+							</tr>
+						</thead>
+						<tbody>
+
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div id="tab_team" class="tab-pane">
+				<div class="container-fluid">
+					<h2 class="text-center"><strong>Gerenciar Equipe</strong></h2>
+					<a id="btn_add_member" class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp;Adicionar Membro</a>
+					<table id="dt_member" class="table table-striped table-bordered">
+						<thead>
+							<tr class="tableheader">
+								<th>Nome</th>
+								<th>Foto</th>
+								<th>Descrição</th>
+								<th>Ações</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+
+			<div id="tab_user" class="tab-pane">
+				<div class="container-fluid">
+					<h2 class="text-center"><strong>Gerenciar Usuários</strong></h2>
+					<a id="btn_add_user" class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp;Adicionar Usuário</a>
+					<table id="dt_user" class="table table-striped table-bordered">
+						<thead>
+							<tr class="tableheader">
+								<th>Login</th>
+								<th>Nome</th>
+								<th>E-mail</th>
+								<th>Ações</th>
+							</tr>
+						</thead>
+						<tbody>
+							
+						</tbody>
+					</table>
+				</div>
+			</div>
+
 		</div>
 	
 	</div>
