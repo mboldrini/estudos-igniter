@@ -100,5 +100,66 @@
 	</div>
 
 
-
 </section>
+
+
+<div id="modal_course" class="modal fade">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">x</button>
+				<div class="modal-title">Cursos</div>
+			</div>
+
+			<div class="modal-body">
+				<form action="" id="form_course">
+
+					<input name="course_id" hidden>
+
+					<div class="form-group">
+						<div class="col-lg-2 control-label">Nome</div>
+						<div class="col-lg-10">
+							<input type="text" id="course_name" name="course_name" class="form-control" maxlength="100">
+							<div class="help-block"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-lg-2 control-label">Imagem</div>
+						<div class="col-lg-10">
+							<input type="file" accept="image/*" id="course_img" name="course_img" class="form-control">
+							<div class="help-block"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-lg-2 control-label">Duracao</div>
+						<div class="col-lg-10">
+							<input type="number" id="course_duration" name="course_duration" class="form-control" min="0">
+							<div class="help-block"></div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<div class="col-lg-2 control-label">Descrição</div>
+						<div class="col-lg-10">
+							<text-area id="course_description" name="course_description" class="form-control" maxlength="254">
+							</text-area>
+							<div class="help-block"></div>
+						</div>
+					</div>
+
+					<div class="form-group text-center">
+						<button type="submit" id="btn_save_course" class="btn btn-primary">
+							<i class="fa fa-save">&nbsp;&nbsp;Salvar</i>
+						</button>
+						<span class="help-block"></span>
+					</div>
+
+				</form>
+			</div>
+
+		</div>
+	</div>
+</div>
