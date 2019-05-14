@@ -3,6 +3,9 @@
 class Restrict extends CI_Controller {
 
     public function index(){
+
+        $this->load->model("users_model");
+
         $this->template->show("login.php");
     }
     
