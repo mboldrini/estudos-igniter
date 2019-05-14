@@ -5,7 +5,7 @@
 				<div class="section-title">
 					<h2>LOGIN</h2>
 
-    <form id="login_form">
+    <form id="login_form" method="post" action="<?=base_url()?>restrict/ajax_login">
 
         <div class="row">
             <div class="col-lg-12">
@@ -14,8 +14,9 @@
                         <div class="input-group-addon">
                             <span class="glyphicon glyphicon-user"></span>
                         </div>
-                        <input type="text" placeholder="Usuário" name="username" class="form-control">
+                        <input type="text"  placeholder="Usuário" name="username" id="username" class="form-control">
                     </div>
+                    <span class="help-block"></span>
                 </div>
             </div>
         </div>
@@ -27,8 +28,9 @@
                         <div class="input-group-addon">
                             <span class="glyphicon glyphicon-lock"></span>
                         </div>
-                        <input type="password" placeholder="Senha" name="password" class="form-control">
+                        <input type="password" placeholder="Senha" name="password" id="password" class="form-control">
                     </div>
+                    <span class="help-block"></span>
                 </div>
             </div>
         </div>
@@ -41,7 +43,6 @@
                 <span class="help-block"></span>
             </div>
         </div>
-
 
     </form>
 
