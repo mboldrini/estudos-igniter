@@ -1,4 +1,4 @@
-const BASE_URL = "localhost/estudos-igniter/";
+const BASE_URL = "http://localhost/estudos-igniter/";
 
 function clearErrors(){
     $(".has-error").removeClass("has-error");

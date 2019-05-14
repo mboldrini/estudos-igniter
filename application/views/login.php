@@ -5,7 +5,7 @@
 				<div class="section-title">
 					<h2>LOGIN</h2>
 
-    <form id="login_form" method="post" action="<?=base_url()?>restrict/ajax_login">
+    <form id="login_form" method="post" >
 
         <div class="row">
             <div class="col-lg-12">
