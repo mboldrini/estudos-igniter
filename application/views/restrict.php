@@ -127,9 +127,19 @@
 
 					<div class="form-group">
 						<div class="col-lg-2 control-label">Imagem</div>
-						<div class="col-lg-10">
-							<input type="file" accept="image/*" id="course_img" name="course_img" class="form-control">
-							<div class="help-block"></div>
+							<div class="col-lg-10">
+								
+								<img id="course_img_path" src="" style="max-height:400px; max-width:400px;">
+
+								<label class="btn btn-block btn-info">
+									<i class="fa fa-upload"></i>&nbsp;&nbsp;Importar imagem
+									<input type="file" id="btn_upload_course_img" accept="image/*" style="display:none;">
+								</label>
+
+								<input id="course_img" name="course_img">
+
+								<div class="help-block"></div>
+							</div>
 						</div>
 					</div>
 
@@ -188,9 +198,20 @@
 
 					<div class="form-group">
 						<div class="col-lg-2 control-label">Foto</div>
-						<div class="col-lg-10">
-							<input type="file" accept="image/*" id="member_photo" name="member_photo" class="form-control">
-							<div class="help-block"></div>
+							<div class="col-lg-10">
+							
+								<img id="member_img_path" src="" style="max-height:400px; max-width:400px;">
+
+								<label class="btn btn-block btn-info">
+									<i class="fa fa-upload"></i>&nbsp;&nbsp;Importar Foto
+									<input type="file" id="btn_upload_member_img" accept="image/*" style="display:none;">
+								</label>
+
+								<input id="member_photo" name="member_photo">
+
+								<div class="help-block"></div>
+
+							</div>
 						</div>
 					</div>
 
