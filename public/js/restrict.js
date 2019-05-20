@@ -1,7 +1,7 @@
 $(function(){
 
     $("#btn_add_course").click(function(){
-        $("#modal_course").modal("show");
+        $("#modal_course").modal();
     });
 
     $("#btn_add_member").click(function (){
@@ -23,4 +23,3 @@ $(function(){
     console.log("restrict.js carregando..");
 
 });
-
