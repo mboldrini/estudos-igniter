@@ -10,10 +10,8 @@ class Restrict extends CI_Controller {
     public function index(){
 
         if( $this->session->userdata("user_id")){
-            $data = array(
+                 $data = array(
                 "scripts"=> array(
-                    'jquery.js',
-                    'bootstrap.min.js',
                     "util.js",
                     "restrict.js"
                 )          
@@ -22,8 +20,6 @@ class Restrict extends CI_Controller {
         }else{
             $data = array(
                 "scripts"=> array(
-                    'jquery.js',
-                    'bootstrap.min.js',
                     "util.js",
                     "login.js"
                 )          
@@ -78,7 +74,7 @@ class Restrict extends CI_Controller {
 
     }
 
-}
+    public function ajax_import_image(){
 
         if( ! $this->input->is_ajax_request() ){
             exit("Nenhum acesso de script direto permitido!");
