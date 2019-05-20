@@ -121,24 +121,25 @@
 						<div class="col-lg-2 control-label">Nome</div>
 						<div class="col-lg-10">
 							<input type="text" id="course_name" name="course_name" class="form-control" maxlength="100">
-							<span class="help-block"></span>
+							<div class="help-block"></div>
 						</div>
 					</div>
 
 					<div class="form-group">
 						<div class="col-lg-2 control-label">Imagem</div>
-						<div class="col-lg-10">
+							<div class="col-lg-10">
+								
+								<img id="course_img_path" src="" style="max-height:400px; max-width:400px;">
 
-							<img id="course_img_path" src="" style="max-height:400px; max-height: 400px;"/>
+								<label class="btn btn-block btn-info">
+									<i class="fa fa-upload"></i>&nbsp;&nbsp;Importar imagem
+									<input type="file" id="btn_upload_course_img" accept="image/*" style="display:none;">
+								</label>
 
-							<label class="btn btn-block btn-info">
-								<i class="fa fa-upload"></i>&nbsp;&nbsp;Importar Imagem 
-								<input type="file" id="btn_upload_course_img" accept="image/*" style="display:none;">
-							</label>
+								<input id="course_img" name="course_img">
 
-							<input id="course_img" name="course_img">
-
-							<span class="help-block"></span>
+								<div class="help-block"></div>
+							</div>
 						</div>
 					</div>
 
@@ -146,7 +147,7 @@
 						<div class="col-lg-2 control-label">Duracao</div>
 						<div class="col-lg-10">
 							<input type="number" id="course_duration" name="course_duration" class="form-control" min="0">
-							<span class="help-block"></span>
+							<div class="help-block"></div>
 						</div>
 					</div>
 
@@ -155,7 +156,7 @@
 						<div class="col-lg-10">
 							<text-area id="course_description" name="course_description" class="form-control" maxlength="254">
 							</text-area>
-							<span class="help-block"></span>
+							<div class="help-block"></div>
 						</div>
 					</div>
 
@@ -191,24 +192,26 @@
 						<div class="col-lg-2 control-label">Nome</div>
 						<div class="col-lg-10">
 							<input type="text" id="member_name" name="member_name" class="form-control" maxlength="100">
-							<span class="help-block"></span>
+							<div class="help-block"></div>
 						</div>
 					</div>
 
 					<div class="form-group">
 						<div class="col-lg-2 control-label">Foto</div>
 							<div class="col-lg-10">
+							
+								<img id="member_img_path" src="" style="max-height:400px; max-width:400px;">
 
-							<img id="member_photo_path" src="" style="max-height:400px; max-height: 400px;"/>
+								<label class="btn btn-block btn-info">
+									<i class="fa fa-upload"></i>&nbsp;&nbsp;Importar Foto
+									<input type="file" id="btn_upload_member_img" accept="image/*" style="display:none;">
+								</label>
 
-							<label class="btn btn-block btn-info">
-								<i class="fa fa-upload"></i>&nbsp;&nbsp;Importar Foto 
-								<input type="file" id="btn_upload_member_photo" accept="image/*" style="display:none;">
-							</label>
+								<input id="member_photo" name="member_photo">
 
-							<input id="member_photo" name="member_photo">
+								<div class="help-block"></div>
 
-							<span class="help-block"></span>
+							</div>
 						</div>
 					</div>
 
@@ -217,7 +220,7 @@
 						<div class="col-lg-10">
 							<text-area id="member_description" name="member_description" class="form-control" maxlength="254">
 							</text-area>
-							<span class="help-block"></span>
+							<div class="help-block"></div>
 						</div>
 					</div>
 
@@ -254,7 +257,7 @@
 						<div class="col-lg-2 control-label">Login</div>
 						<div class="col-lg-10">
 							<input type="text" id="user_login" name="user_login" class="form-control" maxlength="30">
-							<span class="help-block"></span>
+							<div class="help-block"></div>
 						</div>
 					</div>
 
@@ -262,7 +265,7 @@
 						<div class="col-lg-2 control-label">Nome</div>
 						<div class="col-lg-10">
 							<input type="text" id="user_full_name" name="user_full_name" class="form-control" maxlength="100">
-							<span class="help-block"></span>
+							<div class="help-block"></div>
 						</div>
 					</div>
 
@@ -270,7 +273,7 @@
 						<div class="col-lg-2 control-label">E-mail</div>
 						<div class="col-lg-10">
 							<input type="email" id="user_email" name="user_email" class="form-control" maxlength="100">
-							<span class="help-block"></span>
+							<div class="help-block"></div>
 						</div>
 					</div>
 
@@ -278,7 +281,7 @@
 						<div class="col-lg-2 control-label">Confirmar E-mail</div>
 						<div class="col-lg-10">
 							<input type="email" id="user_email_confirm" name="user_email_confirm" class="form-control" maxlength="100">
-							<span class="help-block"></span>
+							<div class="help-block"></div>
 						</div>
 					</div>
 
@@ -286,7 +289,7 @@
 						<div class="col-lg-2 control-label">Senha</div>
 						<div class="col-lg-10">
 							<input type="password" id="user_password" name="user_password" class="form-control">
-							<span class="help-block"></span>
+							<div class="help-block"></div>
 						</div>
 					</div>
 
@@ -294,7 +297,7 @@
 						<div class="col-lg-2 control-label">Confirmar Senha</div>
 						<div class="col-lg-10">
 							<input type="password" id="user_password_confirm" name="user_password_confirm" class="form-control">
-							<span class="help-block"></span>
+							<div class="help-block"></div>
 						</div>
 					</div>
 
