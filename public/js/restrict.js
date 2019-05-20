@@ -20,7 +20,7 @@ $(function(){
         uploadImg($(this), $("#member_photo_path"), $("#member_photo"));
     });
 
-    console.log("restrict.js carregando");
+    console.log("restrict.js carregando..");
 
 });
 
