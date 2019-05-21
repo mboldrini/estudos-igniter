@@ -125,7 +125,7 @@
 						</div>
 					</div>
 
-		  <div class="form-group">
+		  		<div class="form-group">
             <label class="col-lg-2 control-label">Imagem</label>
             <div class="col-lg-10">
               <img id="course_img_path" src="" style="max-height: 400px; max-height: 400px">
@@ -149,8 +149,7 @@
 					<div class="form-group">
 						<div class="col-lg-2 control-label">Descrição</div>
 						<div class="col-lg-10">
-							<text-area id="course_description" name="course_description" class="form-control" maxlength="254">
-							</text-area>
+							<textarea class="form-control" id="course_description" name="course_description" max-length="254" rows="3"></textarea>
 							<div class="help-block"></div>
 						</div>
 					</div>
