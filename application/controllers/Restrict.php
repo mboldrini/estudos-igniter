@@ -10,8 +10,10 @@ class Restrict extends CI_Controller {
     public function index(){
 
         if( $this->session->userdata("user_id")){
-                 $data = array(
+			$data = array(
                 "scripts"=> array(
+					'jquery.js',
+					'bootstrap.min.js',
                     "util.js",
                     "restrict.js"
                 )          
@@ -20,6 +22,8 @@ class Restrict extends CI_Controller {
         }else{
             $data = array(
                 "scripts"=> array(
+					'jquery.js',
+					'bootstrap.min.js',
                     "util.js",
                     "login.js"
                 )          
@@ -106,7 +110,7 @@ class Restrict extends CI_Controller {
 		echo json_encode($json);
     }
     
-   public function ajax_save_course() {
+  	public function ajax_save_course() {
 
 		if (!$this->input->is_ajax_request()) {
 			exit("Nenhum acesso de script direto permitido!");
@@ -166,7 +170,6 @@ class Restrict extends CI_Controller {
 		echo json_encode($json);
     }
     
-
     public function ajax_save_member() {
 
 		if (!$this->input->is_ajax_request()) {
@@ -210,7 +213,77 @@ class Restrict extends CI_Controller {
 
 		echo json_encode($json);
     }
-    
+	
+	
 
+	public function ajax_save_user() {
+
+		if (!$this->input->is_ajax_request()) {
+			exit("Nenhum acesso de script direto permitido!");
+		}
+
+		$json = array();
+		$json["status"] = 1;
+		$json["error_list"] = array();
+
+		$this->load->model("users_model");
+
+		$data = $this->input->post();
+
+		if (empty($data["user_login"])) {
+			$json["error_list"]["#user_login"] = "Login é obrigatório!";
+		} else {
+			if ($this->users_model->is_duplicated("user_login", $data["user_login"], $data["user_id"])) {
+				$json["error_list"]["#user_login"] = "Login já existente!";
+			}
+		}
+
+		if (empty($data["user_full_name"])) {
+			$json["error_list"]["#user_full_name"] = "Nome Completo é obrigatório!";
+		} 
+
+		if (empty($data["user_email"])) {
+			$json["error_list"]["#user_email"] = "E-mail é obrigatório!";
+		} else {
+			if ($this->users_model->is_duplicated("user_email", $data["user_email"], $data["user_id"])) {
+				$json["error_list"]["#user_email"] = "E-mail já existente!";
+			} else {
+				if ($data["user_email"] != $data["user_email_confirm"]) {
+					$json["error_list"]["#user_email"] = "";
+					$json["error_list"]["#user_email_confirm"] = "E-mails não conferem!";
+				}
+			}
+		}
+
+		if (empty($data["user_password"])) {
+			$json["error_list"]["#user_password"] = "Senha é obrigatório!";
+		} else {
+			if ($data["user_password"] != $data["user_password_confirm"]) {
+				$json["error_list"]["#user_password"] = "";
+				$json["error_list"]["#user_password_confirm"] = "Senha não conferem!";
+			}
+		}
+
+		if (!empty($json["error_list"])) {
+			$json["status"] = 0;
+		} else {
+
+			$data["password_hash"] = password_hash($data["user_password"], PASSWORD_DEFAULT);
+
+			unset($data["user_password"]);
+			unset($data["user_password_confirm"]);
+			unset($data["user_email_confirm"]);
+
+			if (empty($data["user_id"])) {
+				$this->users_model->insert($data);
+			} else {
+				$user_id = $data["user_id"];
+				unset($data["user_id"]);
+				$this->users_model->update($user_id, $data);
+			}
+		}
+
+		echo json_encode($json);
+	}
 
 }/* GERAL */

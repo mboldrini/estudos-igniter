@@ -15,6 +15,8 @@ $(function(){
     });
 
     $("#btn_add_user").click(function (){
+        clearErrors();
+        $("#form_user")[0].reset();///Limpa todos os campos do form
         $("#modal_user").modal();
     });
 
@@ -25,6 +27,7 @@ $(function(){
     $("#btn_upload_member_photo").change(function () {
         uploadImg($(this), $("#member_photo_path"), $("#member_photo"));
     });
+
 
     $("#form_course").submit(function () {
 
@@ -75,4 +78,32 @@ $(function(){
     });
 
 
+    $("#form_user").submit(function() {
+
+        $.ajax({
+            type: "POST",
+            url: BASE_URL + "restrict/ajax_save_user",
+            dataType: "json",
+            data: $(this).serialize(),
+            beforeSend: function() {
+                clearErrors();
+                $("#btn_save_user").siblings(".help-block").html(loadingImg("Verificando..."));
+            },
+            success: function(response) {
+                clearErrors();
+                if (response["status"]) {
+                    $("#modal_user").modal("hide");
+                } else {
+                    showErrorsModal(response["error_list"])
+                }
+            }
+        })
+
+        return false;
+    });
+  
+
+
+
 });
+
