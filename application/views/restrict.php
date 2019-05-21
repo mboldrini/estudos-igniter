@@ -206,7 +206,7 @@
 					<div class="form-group">
 						<div class="col-lg-2 control-label">Descrição</div>
 						<div class="col-lg-10">
-							<text-area id="member_description" name="member_description" class="form-control" maxlength="254">
+							<textarea class="form-control" rows="3" id="member_description" name="member_description" class="form-control" maxlength="254"></textarea>
 							</text-area>
 							<div class="help-block"></div>
 						</div>
