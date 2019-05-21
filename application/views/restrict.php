@@ -5,8 +5,6 @@
 			<div class="col-lg-offset-3 col-lg-6 text-center">
 				<div class="section-title">
 					<h2>ÁREA RESTRITA</h2>
-
-
 				</div>
 			</div>
 		</div>
@@ -15,7 +13,7 @@
 			<div class="col-lg-offset-3 col-lg-6 text-center">
 				<div class="form-group">
 					
-					<a class="btn btn-link"><i class="fa fa-user"></i></a>
+					<a id="btn_your_user" class="btn btn-link" user_id="<?= $user_id ?>"><i class="fa fa-user"></i></a>
 					<a class="btn btn-link" href="restrict/logoff"><i class="fa fa-sign-out"></i></a>
 
 				</div>
@@ -99,7 +97,6 @@
 	
 	</div>
 
-
 </section>
 
 
@@ -115,7 +112,7 @@
 			<div class="modal-body">
 				<form action="" id="form_course">
 
-					<input name="course_id" hidden>
+					<input id="course_id" name="course_id" hidden>
 
 					<div class="form-group">
 						<div class="col-lg-2 control-label">Nome</div>
@@ -180,7 +177,7 @@
 			<div class="modal-body">
 				<form action="" id="form_member">
 
-					<input name="member_id" hidden>
+					<input id="member_id" name="member_id" hidden>
 
 					<div class="form-group">
 						<div class="col-lg-2 control-label">Nome</div>

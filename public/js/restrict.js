@@ -77,7 +77,6 @@ $(function(){
         return false;
     });
 
-
     $("#form_user").submit(function() {
 
         $.ajax({
@@ -101,9 +100,29 @@ $(function(){
 
         return false;
     });
-  
 
 
+    $("#btn_your_user").click(function () {
+
+        $.ajax({
+            type: "POST",
+            url: BASE_URL + "restrict/ajax_get_user_data",
+            dataType: "json",
+            data: { "user_id": $(this).attr("user_id") },
+            success: function (response) {
+                clearErrors();
+                $("#form_user")[0].reset();
+                $.each(response["input"], function (id, value) {
+                    $("#" + id).val(value);
+                });
+                $("#modal_user").modal();
+            }
+        })
+
+        return false;
+    });
+
+    console.log("loading?");
 
 });
 
