@@ -53,24 +53,23 @@
       </div>
 
 			<div id="tab_team" class="tab-pane">
-				<div class="container-fluid">
-					<h2 class="text-center"><strong>Gerenciar Equipe</strong></h2>
-					<a id="btn_add_member" class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp;Adicionar Membro</a>
-					<table id="dt_member" class="table table-striped table-bordered">
-						<thead>
-							<tr class="tableheader">
-								<th>Nome</th>
-								<th>Foto</th>
-								<th>Descrição</th>
-								<th>Ações</th>
-							</tr>
-						</thead>
-						<tbody>
-							
-						</tbody>
-					</table>
-				</div>
-			</div>
+        <div class="container-fluid">
+          <h2 class="text-center"><strong>Gerenciar Equipe</strong></h2>
+          <a id="btn_add_member" class="btn btn-primary"><i class="fa fa-plus">&nbsp;&nbsp;Adicionar Membro</i></a>
+          <table id="dt_team" class="table table-striped table-bordered">
+            <thead>
+              <tr class="tableheader">
+                <th class="dt-center">Nome</th>
+                <th class="dt-center no-sort">Foto</th>
+                <th class="no-sort">Descrição</th>
+                <th class="dt-center no-sort">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
+         </div>
+      </div>
 
 			<div id="tab_user" class="tab-pane">
 				<div class="container-fluid">

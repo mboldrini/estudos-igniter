@@ -138,5 +138,15 @@ $(function(){
         ]
     });
 
+    var dt_member = $("#dt_team").DataTable({
+        "autoWidth": false,
+        "processing": true,
+        "serverSide": true,
+        "ajax": {
+            "url": BASE_URL + "restrict/ajax_list_member",
+            "type": "POST",
+        }
+    });
+
 });
 
