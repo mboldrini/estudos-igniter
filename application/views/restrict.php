@@ -96,7 +96,6 @@
 		</div>
 	
 	</div>
-
 </section>
 
 
@@ -164,6 +163,7 @@
 		</div>
 	</div>
 </div>
+
 
 <div id="modal_member" class="modal fade">
 	<div class="modal-dialog modal-lg">
