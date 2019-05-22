@@ -124,5 +124,19 @@ $(function(){
 
     console.log("loading?");
 
+    var dt_course = $("#dt_courses").DataTable({
+        "autoWidth": false,
+        "processing": true, /// mostra a tela processando ao pesquisar no db
+        "serverSite": true,
+        "ajax": {
+            "url": BASE_URL + "restrict/ajax_list_course",
+            "type": "POST",
+        },
+        "columnDefs": [
+            { targets: "no-sort", orderable: false },
+            { targets: "dt-center", className: "dt-center" },
+        ]
+    });
+
 });
 

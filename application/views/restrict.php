@@ -34,24 +34,23 @@
 
 			<div id="tab_courses" class="tab-pane active">
 				<div class="container-fluid">
-					<h2 class="text-center"><strong>Gerenciar Cursos</strong></h2>
-					<a id="btn_add_course" class="btn btn-primary"><i class="fa fa-plus"></i>&nbsp;Adicionar Curso</a>
-					<table id="dt_courses" class="table table-striped table-bordered">
-						<thead>
-							<tr class="tableheader">
-								<th>Nome</th>
-								<th>Imagem</th>
-								<th>Duração</th>
-								<th>Descrição</th>
-								<th>Ações</th>
-							</tr>
-						</thead>
-						<tbody>
-
-						</tbody>
-					</table>
+          <h2 class="text-center"><strong>Gerenciar Cursos</strong></h2>
+          <a id="btn_add_course" class="btn btn-primary"><i class="fa fa-plus">&nbsp;&nbsp;Adicionar Curso</i></a>
+          <table id="dt_courses" class="table table-striped table-bordered">
+            <thead>
+              <tr class="tableheader">
+                <th class="dt-center">Nome</th>
+                <th class="dt-center no-sort">Imagem</th>
+                <th class="dt-center">Duração</th>
+                <th class="no-sort">Descrição</th>
+                <th class="dt-center no-sort">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+          </table>
 				</div>
-			</div>
+      </div>
 
 			<div id="tab_team" class="tab-pane">
 				<div class="container-fluid">
