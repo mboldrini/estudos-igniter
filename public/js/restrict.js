@@ -148,5 +148,16 @@ $(function(){
         }
     });
 
+    var dt_user = $("#dt_user").DataTable({
+        "autoWidth": false,
+        "processing": true,
+        "serverSide": true,
+        "ajax": {
+            "url": BASE_URL + "restrict/ajax_list_user",
+            "type": "POST",
+        }
+    });
+
+
 });
 

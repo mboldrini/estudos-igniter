@@ -366,8 +366,7 @@ class Restrict extends CI_Controller {
 		echo json_encode($json);
 	}
 
-
-		public function ajax_list_member() {
+	public function ajax_list_member() {
 
 		if (!$this->input->is_ajax_request()) {
 			exit("Nenhum acesso de script direto permitido!");
