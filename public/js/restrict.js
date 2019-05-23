@@ -162,6 +162,9 @@ $(function(){
         "ajax": {
             "url": BASE_URL + "restrict/ajax_list_user",
             "type": "POST",
+        },
+        "initComplete": function () {
+            active_btn_user();
         }
     });
 
@@ -188,8 +191,38 @@ $(function(){
             })
 
         });
-    }
 
+
+        $(".btn-del-course").click(function(){
+
+            var course_id = $(this);
+
+            swal({
+                title: "Atenção!",
+                text: "Você realmente deseja deletar esse curso?",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+                buttons: ["Cancelar", "Sim"]
+            }).then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        type: "POST",
+                        url: BASE_URL + "restrict/ajax_delete_course_data",
+                        dataType: "json",
+                        data: { "course_id": course_id.attr("course_id") },
+                        success: function (response) {
+                            swal("Sucesso!", "Seu curso foi 100% excluido", {
+                                icon: "success",
+                            });
+                            dt_course.ajax.reload();
+                        }
+                    });
+                }
+            });
+
+        });
+    }
 
     function active_btn_member(){
         $(".btn-edit-member").click(function(){
@@ -215,7 +248,64 @@ $(function(){
         });
     }
 
+    function active_btn_user() {
+        $(".btn-edit-user").click(function () {
+
+            $.ajax({
+                type: "POST",
+                url: BASE_URL + "restrict/ajax_get_user_data",
+                dataType: "json",
+                data: { "user_id": $(this).attr("user_id") },
+                success: function (response) {
+                    clearErrors();
+                    $("#form_user")[0].reset();
+                    $.each(response["input"], function (id, value) {
+                        $("#" + id).val(value);
+                    });
+
+                    $("#modal_user").modal();
+                }
+            })
+
+        });
+    }
 
 
 });
 
+// $(document).ready(function(){
+//     console.log("ready?");
+
+//     $(document).on("click", ".btn-del-course", function () {
+//         $(".btn-del-course").click(function () {
+
+//             var course_id = $(this);
+
+//             swal({
+//                 title: "Atenção!",
+//                 text: "Você realmente deseja deletar esse curso?",
+//                 icon: "warning",
+//                 buttons: true,
+//                 dangerMode: true,
+//                 buttons: ["Cancelar", "Sim"]
+//             }).then((willDelete) => {
+//                 if (willDelete) {
+//                     $.ajax({
+//                         type: "POST",
+//                         url: BASE_URL + "restrict/ajax_delete_course_data",
+//                         dataType: "json",
+//                         data: { "course_id": course_id.attr("course_id") },
+//                         success: function (response) {
+//                             swal("Sucesso!", "Seu curso foi 100% excluido", {
+//                                 icon: "success",
+//                             });
+//                             dt_course.ajax.reload();
+//                         }
+//                     });
+//                 }
+//             });
+
+//         });
+//     });
+    
+// });
