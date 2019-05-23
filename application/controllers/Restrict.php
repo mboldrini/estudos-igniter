@@ -9,6 +9,7 @@ class Restrict extends CI_Controller {
 
     public function index(){
 
+		/// Caso seja detectado um usuário logado no session, já vai p/ o restrito
         if( $this->session->userdata("user_id")){
 			$data = array(
                 "styles" => array(
@@ -36,18 +37,22 @@ class Restrict extends CI_Controller {
                 )          
             );
 
+			// carrega o template já passando os parametros para ele
             $this->template->show("login.php", $data);
         }
         
     }//index
 
     public function logoff(){
-        $this->session->sess_destroy();
+		// destroi todas as sessions conectadas
+		$this->session->sess_destroy();
+		// muda a url já p/ a tela de login
         header("Location: " . base_url() . "restrict" );
     }
 
     public function ajax_login(){
 
+		// Impede o acesso direto sem que seja por meio de um ajax request
         if( ! $this->input->is_ajax_request() ){
             exit("Nenhum acesso de script direto permitido!");
         }
@@ -56,8 +61,8 @@ class Restrict extends CI_Controller {
         $json["status"] = 1;
         $json["error_list"] = array();
 
-        $username = $this->input->post("username");
-        $password = $this->input->post("password");
+        $username = $this->input->post("username");// parametros recebidos via post
+        $password = $this->input->post("password");// parametros recebidos via post
 
         if( empty($username)){
             $json["status"] = 0;
@@ -81,6 +86,7 @@ class Restrict extends CI_Controller {
             }
         }
 
+		// devolve os parametros p/ a requisição ajax que chamou essa funcao aqui
         echo json_encode($json);
 
     }
@@ -305,6 +311,7 @@ class Restrict extends CI_Controller {
 
 		$user_id = $this->input->post("user_id");
 		$data = $this->users_model->get_data($user_id)->result_array()[0];
+		/// o segundo parametro do [] é bom que seja o mesmo do html, pois já facilita na hora de preencher
 		$json["input"]["user_id"] = $data["user_id"];
 		$json["input"]["user_login"] = $data["user_login"];
 		$json["input"]["user_full_name"] = $data["user_full_name"];
