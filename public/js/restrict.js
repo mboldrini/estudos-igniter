@@ -149,6 +149,9 @@ $(function(){
         "ajax": {
             "url": BASE_URL + "restrict/ajax_list_member",
             "type": "POST",
+        },
+        "initComplete": function(){
+            active_btn_member();
         }
     });
 
@@ -178,9 +181,34 @@ $(function(){
                         $("#" + id).val(value);
                     });
 
-                    $("#course_img_path").attr("src", response["img"]["course_img"]);
+                    $("#course_img_path").attr("src", response["img"]["course_img_path"]);
 
                     $("#modal_course").modal();
+                }
+            })
+
+        });
+    }
+
+
+    function active_btn_member(){
+        $(".btn-edit-member").click(function(){
+
+            $.ajax({
+                type: "POST",
+                url: BASE_URL + "restrict/ajax_get_member_data",
+                dataType: "json",
+                data: { "member_id": $(this).attr("member_id") },
+                success: function (response) {
+                    clearErrors();
+                    $("#form_member")[0].reset();
+                    $.each(response["input"], function (id, value) {
+                        $("#" + id).val(value);
+                    });
+
+                    $("#member_photo_path").attr("src", response["img"]["member_photo_path"]);
+
+                    $("#modal_member").modal();
                 }
             })
 

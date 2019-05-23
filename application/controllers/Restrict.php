@@ -207,7 +207,7 @@ class Restrict extends CI_Controller {
 		$json["input"]["course_duration"] = $data["course_duration"];
 		$json["input"]["course_description"] = $data["course_description"];
 
-		$json["img"]["course_img"] = base_url() . $data["course_img"];
+		$json["img"]["course_img_path"] = base_url() . $data["course_img"];
 
 		echo json_encode($json);
 	}
@@ -311,6 +311,30 @@ class Restrict extends CI_Controller {
 		echo json_encode($json);
     }
 	
+	public function ajax_get_member_data() {
+
+		if (!$this->input->is_ajax_request()) {
+			exit("Nenhum acesso de script direto permitido!");
+		}
+
+		$json = array();
+		$json["status"] = 1;
+		$json["input"] = array();
+
+		$this->load->model("team_model");
+
+		$member_id = $this->input->post("member_id");
+		$data = $this->team_model->get_data($member_id)->result_array()[0];
+
+		$json["input"]["member_id"] = $data["member_id"];
+		$json["input"]["member_name"] = $data["member_name"];
+		$json["input"]["member_description"] = $data["member_description"];
+
+		$json["img"]["member_photo_path"] = base_url() . $data["member_photo"];
+
+		echo json_encode($json);
+	}
+
 	public function ajax_list_member() {
 
 		if (!$this->input->is_ajax_request()) {
