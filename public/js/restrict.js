@@ -212,7 +212,7 @@ $(function(){
                         dataType: "json",
                         data: { "course_id": course_id.attr("course_id") },
                         success: function (response) {
-                            swal("Sucesso!", "Seu curso foi 100% excluido", {
+                            swal("Sucesso!", "Ação executada com sucesso", {
                                 icon: "success",
                             });
                             dt_course.ajax.reload();
@@ -246,6 +246,37 @@ $(function(){
             })
 
         });
+
+        $(".btn-del-member").click(function(){
+
+            var member_id = $(this);
+
+            swal({
+                title: "Atenção!",
+                text: "Você realmente deseja deletar esse membro?",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+                buttons: ["Cancelar", "Sim"]
+            }).then((willDelete) => {
+                if (willDelete) {
+                    $.ajax({
+                        type: "POST",
+                        url: BASE_URL + "restrict/ajax_delete_member_data",
+                        dataType: "json",
+                        data: { "member_id": member_id.attr("member_id") },
+                        success: function (response) {
+                            swal("Sucesso!", "Ação executada com sucesso", {
+                                icon: "success",
+                            });
+                            dt_member.ajax.reload();
+                        }
+                    });
+                }
+            });
+
+        });
+
     }
 
     function active_btn_user() {

@@ -401,6 +401,23 @@ class Restrict extends CI_Controller {
 		echo json_encode($json);
     }
 	
+	public function ajax_delete_member_data() {
+
+		if (!$this->input->is_ajax_request()) {
+			exit("Nenhum acesso de script direto permitido!");
+		}
+
+		$json = array();
+		$json["status"] = 1;
+
+		$this->load->model("team_model");
+
+		$member_id = $this->input->post("member_id");
+
+		$this->team_model->delete($member_id);
+
+		echo json_encode($json);
+	}
 
 	/***************\
 	| USUÁRIO		|
